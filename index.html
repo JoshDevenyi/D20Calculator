@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width">
+
+    <title>Josh's D20 Calculator - V 1.5</title>
+
+    <script src="./JS/logic.js"></script>
+
+    <link rel="stylesheet" href="./styles/styles.css">
+
+</head>
+
+<body>
+
+    <!-- TITLE AREA -->
+
+    
+
+    <header>
+        
+        <div id="headerContent">
+            <div id="title" class = "flexContainer">
+
+                <h1>Josh's D20 Calculator</h1>
+
+                <img id="dragon" src="./images/dragon.png" alt="Dragon Silhouette">
+
+            </div>
+
+            <p id="subtitle">SHALL YOU TRUST YOUR FATE TO THE GODS OF CHANCE?</p>
+
+            <p id="explanation">Simplify Your Dungeons & Dragons Experience</p>
+        </div>
+
+    </header>
+    
+    <main>  
+
+        <!-- CHARACTER DETAILS -->
+
+        <section id="characterDetails">
+
+            <h2>Character Details</h2>
+
+            <div id="characterFlex" class="flexContainer">
+                      
+                <div>
+
+                    <div id="detailsFlex" class="flexContainer">
+
+                        <div id="detailBox" class="character">
+
+                                <p id = "charName"><strong>Name:</strong> Pyran Smith</p>
+                                <p id = "class"><strong>Class:</strong> Artificer</p>
+                                <p id = "race"><strong>Race:</strong> Genasi</p>
+                                <p id = "level"><strong>Level: </strong><span id="levelNumber"></span></p>
+
+                        </div>
+
+                        <div id="profBox" class="character">
+                                                
+                            <p id = "proficiencies"><strong>Proficiencies</strong></p>
+
+                            <ul>
+                                <li class = "proficiency">Constitution</li>
+                                <li class = "proficiency">Intelligence</li>
+                                <li class = "proficiency">Insight</li>
+                                <li class = "proficiency">Investigation</li>
+                                <li class = "proficiency">Persuasion</li>
+                                <li class = "proficiency">Sleight of Hand</li>
+                            </ul>
+
+                        </div>
+
+                        <img id="textBorder" src="./images/TextBorder.png" alt="Fancy Fantasy Border">
+
+                    </div>
+
+
+                </div>
+
+
+                <div id="protraitBox" class="character">
+
+                    <img id="portrait" src="./images/CharacterPortrait.png" alt="A fantasy character with goggles holding a hammer and wrench">
+
+                </div>
+
+            </div>
+        
+        </section>
+
+        <!-- CHARACTER STATS -->
+        
+        <section id = "stats">
+
+            <h2>Ability Scores</h2>
+            
+            <div id = "statContent">
+
+                <div class = "aScore">
+
+                    <p class = "statText" >Strength</p>
+                    <p class = "modInsert" id="strScore"></p>
+                    
+                    <!-- <p class = "modText" >Modifier</p> -->
+                    <p class = "modInsert" id="strMod"></p>
+        
+                </div>
+        
+                <div class = "aScore">
+        
+                    <p class = "statText" >Dexterity</p>
+                    <p class = "statInsert" id="dexScore"></p>
+        
+                    <!-- <p class = "modText" >Modifier</p> -->
+                    <p class = "modInsert" id="dexMod"></p>
+                    
+                </div>
+        
+                <div class = "aScore">
+        
+                    <p class = "statText" >Constitution</p>
+                    <p class = "statInsert" id="conScore"></p>
+        
+                    <!-- <p class = "modText" >Modifier</p> -->
+                    <p class = "modInsert" id="conMod"></p>
+        
+                </div>
+        
+                <div class = "aScore">
+        
+                    <p class = "statText" >Intelligence</p>
+                    <p class = "statInsert" id="intScore"></p>
+        
+                    <!-- <p class = "modText" >Modifier</p> -->
+                    <p class = "modInsert" id="intMod"></p>
+        
+                </div>
+                
+                <div class = "aScore">
+        
+                    <p class = "statText" >Wisdom</p>
+                    <p class = "statInsert" id="wisScore"></p>
+<!--         
+                    <p class = "modText" >Modifier</p> -->
+                    <p class = "modInsert" id="wisMod"></p>
+                    
+                </div>
+        
+                <div class = "aScore">
+        
+                    <p class = "statText" >Charisma</p>
+                    <p class = "modInsert" id="chaScore"></p>
+        
+                    <!-- <p class = "modText" >Modifier</p> -->
+                    <p class = "modInsert" id="chaMod"></p>
+        
+                </div>
+
+                <div id = "otherBonus">
+                    <span class="bonusNum" id="profBonus"></span>
+                    <div class="bonusBox"></span><p class="bonusText">Proficiency Bonus</p></div>
+                    <span class="bonusNum" id="initBonus"></span>
+                    <div class="bonusBox"><p class="bonusText">Initiative Bonus</p></div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- FINAL OUTPUT -->
+
+        <section id="diceRoll">
+
+            <h2 id="checkTitle">Reveal Your Fate</h2>
+            
+            <div id="swapText">
+                <h3 id="rollDeclaration">Rolling Digitally</h3>
+                <input class="customButton" id = "SwapBtn" type="submit" value="Roll Physically">
+            </div>
+            
+
+            <form action="/index.html" method="post" id="rollForm" name="rollForm">
+                
+                <div class="flexContainer">
+
+                    <div id="rollInput">
+
+                        <label for="rollSelect">What are you rolling for?</label>
+                        
+                        <select name="rollSelect" id="rollSelect">
+
+                            <optgroup id="sThrows" label="Saving Throws">
+                                <option value="str">Strength</option>
+                                <option value="dex">Dexterity</option>
+                                <option value="con">Constitution</option>
+                                <option value="int">Intelligence</option>
+                                <option value="wis">Wisdom</option>
+                                <option value="cha">Charisma</option>
+                            </optgroup>
+
+                            <optgroup></optgroup>  <!-- Spacer -->
+
+                            <optgroup id="aChecks" label="Ability Checks">
+                                <option value="acrobatics">Acrobatics (Dex)</option>
+                                <option value="animalhandling">Animal Handling (Wis)</option>
+                                <option value="arcana">Arcana (Int)</option>
+                                <option value="athletics">Athletics (Str)</option>
+                                <option value="deception">Deception (Cha)</option>
+                                <option value="history">History (Int)</option>
+                                <option value="insight">Insight (Wis)</option>
+                                <option value="intimidation">Intimidation (Cha)</option>
+                                <option value="investigation">Investigation (Int)</option>
+                                <option value="medicine">Medicine (Wis)</option>
+                                <option value="nature">Nature (Int)</option>
+                                <option value="perception">Perception (Wis)</option>
+                                <option value="performance">Performance (Cha)</option>
+                                <option value="persuasion">Persuasion (Cha)</option>
+                                <option value="religion">Religion (Int)</option>
+                                <option value="sleightofhand">Slight of Hand (Dex)</option>
+                                <option value="stealth">Stealth (Dex)</option>
+                                <option value="survival">Survival (Wis)</option>
+                            </optgroup>
+
+                            <optgroup></optgroup> <!-- Spacer -->
+
+                            <optgroup label="Other">
+                                <option value="initiative">Initiative</option>
+                            </optgroup>
+
+                        </select>
+
+                    </div>
+
+                    
+                    <div id="numInput">
+                        <label id = "numLabel" for="numSelect">What did you roll?</label>
+                        <input type="number" max="20" min="1" id="numSelect" value="1">
+                    </div>
+
+
+                </div>
+                
+                <div id="buttonBox">
+
+                    <input class="customButton" id = "MainBtn" type="submit" value="Your Destiny Awaits">
+
+                </div>
+
+            </form>
+
+            <div id="resultOutput">
+
+                <img src="./images/Question.png" alt="A 20 Sided Dice" id="dicePicture">
+
+                <h3 id="outcomeHeading">FINAL RESULT</h3>
+                
+                <p id = "finalResult"></p>
+
+                <p id="resultMessage"></p>
+
+            </div>
+
+        </section>
+
+    </main>  
+
+</body>
+
+</html>

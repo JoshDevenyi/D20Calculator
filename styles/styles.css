@@ -1,0 +1,494 @@
+/* FONT IMPORT */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Crimson+Pro:ital,wght@0,400;0,500;1,400;1,500&display=swap');
+
+
+/* GENERAL STYLES */
+
+html {
+    
+    margin: 0;
+    padding: 0;
+
+}
+
+body {
+
+    width: 55em;
+    height: auto;
+    margin: 1em auto;
+    border: 2px solid black;
+    outline: 5px double black;
+    background-color: rgb(230, 239, 243);
+    background-image: linear-gradient(150deg, #e9f8ff , #9cc0e9);
+
+
+}
+
+html {
+
+    box-sizing:border-box;
+
+}
+
+*, *::before, *::after {
+
+    box-sizing:inherit;
+
+}
+
+header, main {
+
+    padding: 1em 2em;
+    background-color: #f2e9df;
+    background-image: url("../images/paper3.jpg");
+    background-size: 400px 400px;
+
+}
+
+h1, h2, h3 {
+
+    font-family: 'Cinzel', serif;
+
+}
+
+h2 {
+
+    text-decoration: underline;
+
+}
+
+p, li, label {
+
+    font-family: 'Crimson Pro', serif;
+    font-size: 18px;
+
+}
+
+.flexContainer {
+
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+
+}
+
+section + section {
+
+    margin-top:2.5em;
+
+}
+
+
+/* HEADER */
+
+
+header {
+
+    text-align: center;
+
+
+}
+
+#headerContent{
+
+    z-index: 3;
+    border: 1px solid #f2e9df;
+}
+
+header h1 {
+
+    font-size: 2.25em;
+
+}
+
+header .flexContainer{
+
+    justify-content: center;
+
+}
+
+#dragon{
+
+    max-height: 100%;
+    height: 5em;
+    width: auto;
+
+}
+
+#title{
+
+    padding-top: 1em;
+
+}
+
+#subtitle {
+
+    margin-top: .4em;
+    margin-bottom: 0;
+    font-weight: bold;
+    font-size: 1.05em;
+    font-family: 'Cinzel', serif;
+
+}
+
+#explanation{
+
+    font-size: 1.2em;
+    font-style: italic;
+
+}
+
+
+/* CHARACTER DETAILS */
+
+#characterDetails h2 {
+
+    margin-top: 0;
+
+}
+
+#characterFlex{
+
+    justify-content: space-around;
+}
+
+.character:nth-child(2) {
+
+    text-align: center;
+
+}
+
+.character ul {
+    margin-top: 0;
+    padding: 0;
+}
+
+#protraitBox {
+    max-width: 17.5em;
+}
+
+#portrait {
+    width: 100%;
+    border: 2px solid black;
+    z-index: 1;
+    vertical-align: top;
+}
+
+#proficiencies {
+    margin-bottom: .75em;
+    text-decoration: underline;
+
+}
+
+.proficiency + .proficiency {
+
+    margin-top: .75em;
+
+}
+
+.proficiency {
+
+    list-style-type: none;
+
+}
+
+
+#detailBox, #profBox {
+
+    z-index: 1;
+
+}
+
+#textBorder{
+
+    width: 250px ;
+    position: absolute;
+    transform: scale(1.35, 1.05) translate(11px, 6px);
+    z-index: 0;
+}
+
+#profBox{
+
+    margin-left: 2em;
+
+}
+
+
+/* CHARACTER STATS */
+
+#statContent {
+
+    margin-top: 1.5em;
+    text-align: center;
+
+}
+
+.aScore {
+    width: 6.5em;
+    height: 100%;
+    margin: .5em;
+    margin-top: 0;
+    display: inline-block;
+    padding: .52em;
+    background-image: url(../images/AScoreBorder.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.statText, .statInsert ,.modInsert {
+
+    position: relative;
+
+
+}
+
+.statText, .statInsert {
+
+    transform: translateY(3px);
+
+}
+
+
+.modInsert {
+
+    transform: translateY(6px);
+
+}
+
+.aScore p:nth-child(3), .aScore p:nth-child(4) {
+
+    font-size: 16px;
+
+}
+
+.statText {
+
+    font-weight: bold;
+    margin-bottom: .5em;
+    font-size: 15px;
+
+}
+
+.modText {
+
+    font-style: italic;
+    margin-bottom: .5em;
+
+}
+
+.statInsert, .modInsert {
+
+    margin-top: .5em;
+
+}
+
+.bonusBox {
+
+    width: 12.5em;
+    height: 4.05em;
+    margin: 1em;
+    display: inline-block;
+    border-radius: 1em;
+    background-image: url(../images/BonusBorder.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+
+    
+}
+
+.bonusText,.bonusNum{
+
+    font-size: 16px;
+
+}
+
+.bonusText {
+
+    font-weight: bold;
+    margin-bottom: .5em;
+    width: fit-content;
+    position: relative;
+    transform: translate(70px, 5.5px);
+
+}
+
+.bonusNum{
+    
+    display: inline-block;
+    position: relative;
+    transform: translate(55px, 5.5px);
+
+}
+
+#otherBonus p:nth-child(2) {
+
+    margin-left: 3em;
+
+}
+
+.statItalic {
+
+    font-style: italic;
+
+}
+
+
+/* FINAL RESULTS */
+
+#swapText h3 {
+
+    margin-top: 0;
+    margin-bottom: 8px;
+    font-family: 'Crimson Pro', serif;
+    font-weight: 300;
+    font-size: 22px;
+
+}
+
+#rollForm .flexContainer{
+    margin: 1em 0;
+    height: 3em;
+    align-items: center;
+}
+
+#numSelect, #rollSelect {
+
+    font-size: 16px;
+    border: 1px solid rgb(99, 94, 94);
+    border-radius: 2px;
+
+}
+
+#rollInput label, #numInput label{
+
+    font-size: 22px;
+    margin-top: 8;
+    margin-bottom: 8px;
+}
+
+
+#rollInput label, #rollInput select {
+
+    display: block;
+
+}
+
+#rollInput, #numInput {
+
+    flex: 1 0 0; 
+    height: 100%;
+
+}
+
+#buttonBox {
+
+    width: 100%;
+    text-align: center;
+    margin-top: 3em;
+
+}
+
+#dicePicture {
+    margin-top: 2em;
+    width: 100px;
+    height: 110px;
+
+}
+
+#outcomeHeading {
+
+    display: none;
+    font-size: 1.5em;
+    text-decoration: underline;
+
+}
+
+#finalResult {
+
+    font-family: 'Cinzel', serif;
+    font-size: 1.8em;
+    margin: 0;
+    font-weight: bold;
+}
+
+#resultMessage {
+
+    font-size: 1.1em;
+    font-style: italic;
+
+}
+
+#aChecks{
+
+    margin-top: 3em;
+
+}
+
+optgroup{
+    margin-top:10px;
+    margin-bottom:10px;
+}
+
+#numSelect{
+    text-align: left;
+    display: none;
+
+}
+
+#numLabel{
+
+    display: none;
+
+}
+
+#finalEquation{
+
+    display: none;
+
+}
+
+#resultOutput {
+
+    text-align: center;
+
+}
+
+.customButton, .customButton:visited {
+
+    border: 1px solid rgb(99, 94, 94);
+    border-radius: 4px;
+    font-family: 'Cinzel', serif; 
+    font-weight: 600;
+    background-color: rgb(232, 224, 213);
+
+}
+
+
+.customButton:hover {
+    border: 1px solid rgb(74, 71, 71);
+    background-color: rgb(188, 184, 176);
+
+}
+
+.customButton:active {
+    border: 1px solid rgb(135, 127, 127);
+    background-color: rgb(255, 247, 238);
+}
+
+
+
+
+
+
+#MainBtn {
+
+    font-size: 18px;
+
+}
+
+#SwapBtn {
+
+    font-size: 14px;
+
+}
