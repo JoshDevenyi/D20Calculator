@@ -7,7 +7,7 @@
 
     <meta name="viewport" content="width=device-width">
 
-    <title>Josh's D20 Calculator - V 1.5</title>
+    <title>Josh's D20 Calculator - V 2.0</title>
 
     <script src="./JS/logic.js"></script>
 
@@ -18,8 +18,6 @@
 <body>
 
     <!-- TITLE AREA -->
-
-    
 
     <header>
         
@@ -47,6 +45,18 @@
 
             <h2>Character Details</h2>
 
+            <div id="characterInput">
+                <!-- <form action="#" method="post" id="characterForm" name="characterForm"> -->
+                <label for="characterSelect" id="characterLabel">Select Your Character</label>
+                <select id="characterSelect">
+                    <option value="pyran">Pyran Smith</option>
+                    <option value="alton">Alton Emberhearth</option>
+                    <option value="bouncer">Bouncer</option>
+                </select>
+                <input class="customButton" id = "CharBtn" type="submit" value="Confirm">
+                <!-- </form> -->
+            </div>
+
             <div id="characterFlex" class="flexContainer">
                       
                 <div>
@@ -55,10 +65,11 @@
 
                         <div id="detailBox" class="character">
 
-                                <p id = "charName"><strong>Name:</strong> Pyran Smith</p>
-                                <p id = "class"><strong>Class:</strong> Artificer</p>
-                                <p id = "race"><strong>Race:</strong> Genasi</p>
+                                <p id = "name"><strong>Name: </strong><span id="charName"></span></p>
                                 <p id = "level"><strong>Level: </strong><span id="levelNumber"></span></p>
+                                <p id = "race"><strong>Race: </strong><span id="charRace"></span></p>
+                                <p id = "class"><strong>Class: </strong><span id="charClass"></span></p>
+                                <p id = "race"><strong>Subclass: </strong><span id="charSubclass"></span></p>
 
                         </div>
 
@@ -66,13 +77,7 @@
                                                 
                             <p id = "proficiencies"><strong>Proficiencies</strong></p>
 
-                            <ul>
-                                <li class = "proficiency">Constitution</li>
-                                <li class = "proficiency">Intelligence</li>
-                                <li class = "proficiency">Insight</li>
-                                <li class = "proficiency">Investigation</li>
-                                <li class = "proficiency">Persuasion</li>
-                                <li class = "proficiency">Sleight of Hand</li>
+                            <ul id="proficiencyList">
                             </ul>
 
                         </div>
@@ -87,10 +92,11 @@
 
                 <div id="protraitBox" class="character">
 
-                    <img id="portrait" src="./images/CharacterPortrait.png" alt="A fantasy character with goggles holding a hammer and wrench">
+                    <img id="portrait" src="./images/QuestionShield.png" alt="A Vector of a Shield with a Question Mark in the Center">
 
                 </div>
 
+                <!-- <img id="portraitBorder" src="./images/TextBorderClear.png" alt="Fancy Fantasy Border"> -->
             </div>
         
         </section>

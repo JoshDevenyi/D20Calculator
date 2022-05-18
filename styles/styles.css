@@ -9,7 +9,7 @@ html {
     
     margin: 0;
     padding: 0;
-
+    scroll-behavior: smooth;
 }
 
 body {
@@ -22,13 +22,10 @@ body {
     background-color: rgb(230, 239, 243);
     background-image: linear-gradient(150deg, #e9f8ff , #9cc0e9);
 
-
 }
 
 html {
-
     box-sizing:border-box;
-
 }
 
 *, *::before, *::after {
@@ -87,7 +84,6 @@ header {
 
     text-align: center;
 
-
 }
 
 #headerContent{
@@ -141,16 +137,26 @@ header .flexContainer{
 
 
 /* CHARACTER DETAILS */
+#characterInput * {
+
+    display: block;
+
+}
+
+#characterSelect {
+
+    margin-bottom: 8px;
+
+}
 
 #characterDetails h2 {
-
     margin-top: 0;
-
 }
 
 #characterFlex{
 
     justify-content: space-around;
+    margin-top: 2em;
 }
 
 .character:nth-child(2) {
@@ -166,52 +172,69 @@ header .flexContainer{
 
 #protraitBox {
     max-width: 17.5em;
+    position: relative;
+    top: 16px;
+    z-index: 2;
 }
 
 #portrait {
     width: 100%;
-    border: 2px solid black;
-    z-index: 1;
+    border: 5px double black;
+    /* border-radius: 10px; */
+    z-index: 3;
     vertical-align: top;
 }
 
 #proficiencies {
     margin-bottom: .75em;
     text-decoration: underline;
-
 }
 
 .proficiency + .proficiency {
-
     margin-top: .75em;
-
 }
 
 .proficiency {
-
     list-style-type: none;
-
+    font-style: italic;
 }
 
 
 #detailBox, #profBox {
-
     z-index: 1;
-
 }
 
 #textBorder{
-
     width: 250px ;
     position: absolute;
-    transform: scale(1.35, 1.05) translate(11px, 6px);
+    transform: scale(1.45, 1.20) translate(22px, 20px);
     z-index: 0;
+}
+
+#portraitBorder{
+    width: 250px ;
+    position: absolute;
+    transform: scale(1.25, 1.12) translate(166px, 20px);
+    z-index: 1;
 }
 
 #profBox{
 
     margin-left: 2em;
 
+}
+
+#detailBox{
+    width: 12em;
+}
+
+#profBox{
+    margin-left: 1em;
+}
+
+#proficiencyList{
+    height: 16.5em;
+    width: 7.3em;
 }
 
 
@@ -237,10 +260,7 @@ header .flexContainer{
 }
 
 .statText, .statInsert ,.modInsert {
-
     position: relative;
-
-
 }
 
 .statText, .statInsert {
@@ -284,7 +304,6 @@ header .flexContainer{
 }
 
 .bonusBox {
-
     width: 12.5em;
     height: 4.05em;
     margin: 1em;
@@ -293,8 +312,6 @@ header .flexContainer{
     background-image: url(../images/BonusBorder.png);
     background-size: 100%;
     background-repeat: no-repeat;
-
-    
 }
 
 .bonusText,.bonusNum{
@@ -352,7 +369,7 @@ header .flexContainer{
     align-items: center;
 }
 
-#numSelect, #rollSelect {
+#numSelect, #rollSelect, #characterSelect {
 
     font-size: 16px;
     border: 1px solid rgb(99, 94, 94);
@@ -360,7 +377,7 @@ header .flexContainer{
 
 }
 
-#rollInput label, #numInput label{
+#rollInput label, #numInput label, #characterInput label{
 
     font-size: 22px;
     margin-top: 8;
@@ -475,10 +492,6 @@ optgroup{
     border: 1px solid rgb(135, 127, 127);
     background-color: rgb(255, 247, 238);
 }
-
-
-
-
 
 
 #MainBtn {

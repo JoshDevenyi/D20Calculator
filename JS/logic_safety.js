@@ -1,6 +1,6 @@
 ///// Josh's D&D Calculator /////
 
-//D&D Character Objects 
+//Character Objects 
 const pyran = {
     name: "Pyran Smith",
     level: 4,
@@ -54,68 +54,26 @@ const bouncer = {
 }
 
 
-//For Character Object
-var character;
+//Selecting Character
+var character = alton;
 
 //Variables
-var charLvl; //Character Level
-var charProfs;
-var profBonus; //Calculates a character's proficiency bonus based on their level
+var charLvl = character.level; //Character Level
+var charProfs = character.proficiencies;
+var profBonus = Math.ceil (1 + (charLvl/4)) ; //Calculates a character's proficiency bonus based on their level
 var dTwenty; //Will hold the value of the die
 
+
 //Ability Scores
-var strScore;  //Strength Score
-var dexScore;  //Dexterity Score
-var conScore;  //Constitution Score
-var intScore;  //Intelligence Score
-var wisScore;   //Wisdom Score
-var chaScore;  //Charisma Score
-
-//Modifiers
-var strMod;
-var dexMod;
-var conMod;
-var intMod;
-var wisMod;
-var chaMod;
-
+var strScore = character.strScore;  //Strength Score
+var dexScore = character.dexScore;  //Dexterity Score
+var conScore = character.conScore;  //Constitution Score
+var intScore = character.intScore;  //Intelligence Score
+var wisScore = character.wisScore;   //Wisdom Score
+var chaScore = character.chaScore;  //Charisma Score
 
 
 ///////////Main Functions//////////
-
-//Sets the user's character
-function setCharacter(selectedCharacter){
-
-    character = selectedCharacter;
-
-    //Variables
-    charLvl = character.level; //Character Level
-    charProfs = character.proficiencies;
-    profBonus = Math.ceil (1 + (charLvl/4)) ; //Calculates a character's proficiency bonus based on their level
-    dTwenty; //Will hold the value of the die
-
-
-    //Ability Scores
-    strScore = character.strScore;  //Strength Score
-    dexScore = character.dexScore;  //Dexterity Score
-    conScore = character.conScore;  //Constitution Score
-    intScore = character.intScore;  //Intelligence Score
-    wisScore = character.wisScore;   //Wisdom Score
-    chaScore = character.chaScore;  //Charisma Score
-
-    //Save each ability score's modifier in a variable
-    strMod = getModifier (strScore);
-    dexMod = getModifier (dexScore);
-    conMod = getModifier (conScore);
-    intMod = getModifier (intScore);
-    wisMod = getModifier (wisScore);
-    chaMod = getModifier (chaScore);
-    
-}
-
-//Setting default chracter
-setCharacter(pyran);
-
 
 function isModProf(inputStat) {
     //Reset Prof Bonus
@@ -452,7 +410,13 @@ function finalOutput(rollResult, rollSelection) {
 }
 
 
-
+//Save each ability score's modifier in a variable
+var strMod = getModifier (strScore);
+var dexMod = getModifier (dexScore);
+var conMod = getModifier (conScore);
+var intMod = getModifier (intScore);
+var wisMod = getModifier (wisScore);
+var chaMod = getModifier (chaScore);
 
 
 window.onload = function () {
@@ -503,54 +467,49 @@ window.onload = function () {
 
     var output = document.getElementById("resultMessage");
 
+    var characterForm = document.forms.characterForm;
     var rollForm = document.forms.rollForm;
 
 
     var realDice = false; //This variable keeps track of whether the user is rolling a real or digital die
 
-    function displayCharacter(character){
-        //Displaying variables in HTML
-        //Character Details
-        nameDisplay.innerHTML = character.name;
-        raceDisplay.innerHTML = character.race;
-        classDisplay.innerHTML = character.class;
-        subclassDisplay.innerHTML = character.subclass;
-        lvlDisplay.innerHTML = charLvl;
+    //Displaying variables in HTML
+    //Character Details
+    nameDisplay.innerHTML = character.name;
+    raceDisplay.innerHTML = character.race;
+    classDisplay.innerHTML = character.class;
+    subclassDisplay.innerHTML = character.subclass;
+    lvlDisplay.innerHTML = charLvl;
 
-        //Character Image
-        charPortrait.src = "./images/" + character.image;
-        charPortrait.alt = character.description;
+    //Character Image
+    charPortrait.src = "./images/" + character.image;
+    charPortrait.alt = character.description;
 
-        //Character Proficiencies
-        var profs = "";
-        for(let i = 0; i < charProfs.length; i++) {
-            profs = profs + '<li class = "proficiency">'+ proficencyOutput(charProfs[i]) +'</li>';      
-        }
-        profList.innerHTML = profs;
-        
-        //Character Stats and Mods 
-        strDisplay.innerHTML = strScore;
-        dexDisplay.innerHTML = dexScore;
-        conDisplay.innerHTML = conScore;
-        intDisplay.innerHTML = intScore;
-        wisDisplay.innerHTML = wisScore;
-        chaDisplay.innerHTML = chaScore;
-
-        strModDisplay.innerHTML = plusCheck(isModProf("str"));
-        dexModDisplay.innerHTML = plusCheck(isModProf("dex"));
-        conModDisplay.innerHTML = plusCheck(isModProf("con"));
-        intModDisplay.innerHTML = plusCheck(isModProf("int"));
-        wisModDisplay.innerHTML = plusCheck(isModProf("wis"));
-        chaModDisplay.innerHTML = plusCheck(isModProf("cha"));
-        
-        //Character Bonuses
-        pbDisplay.innerHTML = plusCheck(profBonus);
-        ibDisplay.innerHTML = plusCheck(dexMod);
+    //Character Proficiencies
+    var profs = "";
+    for(let i = 0; i < charProfs.length; i++) {
+        profs = profs + '<li class = "proficiency">'+ proficencyOutput(charProfs[i]) +'</li>';      
     }
-
-    //Display inital character
-    displayCharacter(pyran);
+    profList.innerHTML = profs;
     
+    //Character Stats and Mods 
+    strDisplay.innerHTML = strScore;
+    dexDisplay.innerHTML = dexScore;
+    conDisplay.innerHTML = conScore;
+    intDisplay.innerHTML = intScore;
+    wisDisplay.innerHTML = wisScore;
+    chaDisplay.innerHTML = chaScore;
+
+    strModDisplay.innerHTML = plusCheck(isModProf("str"));
+    dexModDisplay.innerHTML = plusCheck(isModProf("dex"));
+    conModDisplay.innerHTML = plusCheck(isModProf("con"));
+    intModDisplay.innerHTML = plusCheck(isModProf("int"));
+    wisModDisplay.innerHTML = plusCheck(isModProf("wis"));
+    chaModDisplay.innerHTML = plusCheck(isModProf("cha"));
+    
+    //Character Bonuses
+    pbDisplay.innerHTML = plusCheck(profBonus);
+    ibDisplay.innerHTML = plusCheck(dexMod);
 
 
     //Button Swap Listener
@@ -588,16 +547,13 @@ window.onload = function () {
         var charSelection = document.getElementById("characterSelect");
     
         if(charSelection.value === "pyran"){
-            setCharacter(pyran);
-            displayCharacter(pyran);
+            character = pyran;
         }
         else if(charSelection.value === "alton"){
-            setCharacter(alton);
-            displayCharacter(alton);
+            character = alton;
         }
         else if(charSelection.value === "bouncer"){
-            setCharacter(bouncer);
-            displayCharacter(bouncer);
+            character = bouncer;
         }
 
         console.log(character);
@@ -645,6 +601,22 @@ window.onload = function () {
 
     }
 
+    // characterForm.onsubmit = function () {
+
+    //     var charSelection = document.getElementById("characterSelect");
+
+
+    //     if(charSelection.value === "pyran"){
+    //         character = pyran;
+    //     }
+    //     else if(charSelection.value === "alton"){
+    //         character = alton;
+    //     }
+        
+    //     return false;
+
+    // }
+    
     //Collects user for data and returns false to ensure it stays on the same page
     rollForm.onsubmit = function () {
 
